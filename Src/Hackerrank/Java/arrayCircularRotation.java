@@ -4,8 +4,6 @@ Question link : https://www.hackerrank.com/challenges/circular-array-rotation
 
 */
 
-package src.java.hackerrank;
-
 import java.io.*;
 import java.util.*;
 
