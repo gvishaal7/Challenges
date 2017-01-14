@@ -24,7 +24,7 @@ public class arrayCircularRotation {
             int m = in.nextInt();
             for(int index=0;index<n;index++){
                 int temp_var = index+k;
-                while (temp_var>= n) {
+                while (temp_var >= n) {
                     temp_var = temp_var - n;
                 }
                 if(temp_var == m) {
