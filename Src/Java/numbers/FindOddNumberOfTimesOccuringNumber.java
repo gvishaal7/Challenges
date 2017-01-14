@@ -16,16 +16,16 @@ public class FindOddNumberOfTimesOccuringNumber {
     private static int[] myArray;
     public static void main(String[] args)
     {
-        BufferedReader br = null; 
+        Scanner scanner = null;
         try
         {
-            br = new BufferedReader(new InputStreamReader(System.in));
+            scanner = new Scanner(System.in);
             System.out.println("Enter the array");
             ArrayList<Integer> arrayList = new ArrayList<Integer>();
             int element = 0;
             do
             {
-                element = Integer.parseInt(br.readLine());
+                element = scanner.nextInt();
                 if(element != 0)
                 {
                     arrayList.add(element);
@@ -48,7 +48,7 @@ public class FindOddNumberOfTimesOccuringNumber {
         {
             try
             {
-                if(br!=null) { br.close(); }
+                if(scanner!=null) { scanner.close(); }
             }
             catch(Exception e)
             {
@@ -62,25 +62,8 @@ public class FindOddNumberOfTimesOccuringNumber {
         int number = 0;
         try
         {
-            int max = arrayList.get(0);
-            for(int i=1;i<arrayList.size();i++)
-            {
-                if(arrayList.get(i) > max)
-                {
-                    max =arrayList.get(i);
-                }
-            }
-            myArray = new int[max+1];
-            for(int i=0;i<arrayList.size();i++)
-            {
-                myArray[arrayList.get(i)]++;
-            }
-            for(int i=0;i<myArray.length;i++)
-            {
-                if(myArray[i] % 2 != 0)
-                {
-                    number = myArray[i];
-                }
+            for(int index=0;index<arrayList.size();index++) {
+                number = number ^ arrayList.get(index);
             }
         }
         catch(Exception e)
