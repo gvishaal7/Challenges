@@ -1,9 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package challenges;
+Question : There is a wall of size 'n' and paint balls are thrown at the wall. Each paint ball takes up a size of 1 unit
+and its of float data type. Get inputs until the wall is filled.
+
+Eg: if a paint ball is thrown at 5.3, it occupies the space between 5.3 and 6.3.
+Output when all the spaces on the wall are covered with the paint.
+*/
 
 import java.io.*;
 import java.util.*;
