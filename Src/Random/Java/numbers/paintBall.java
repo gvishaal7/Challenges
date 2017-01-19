@@ -20,29 +20,20 @@ public class paintBall {
             scanner = new Scanner(System.in);
             System.out.print("Enter the length of the wall : ");
             int n = scanner.nextInt();
-            float min = n;
+            float min = (float)n;
             float max = 0;
-            String choice = "y";
             System.out.println("Paint ball values : ");
-            float paintValue = scanner.nextFloat();
-            min = paintValue;
-            paintValue += 1;
-            max = paintValue;
             do {
-                paintValue = scanner.nextFloat();
-                if(paintValue < min && paintValue >=0 && paintValue <= (n+1)) {
+                float paintValue = scanner.nextFloat();
+                if(paintValue < min && paintValue >=1 && paintValue <= (n+1)) {
                     min = paintValue;
                 }
                 paintValue += 1;
-                if(paintValue > max && paintValue >=0 && paintValue <= (n+1)) {
+                if(paintValue > max && paintValue >=1 && paintValue <= (n+1)) {
                     max = paintValue;
                 }
-                System.out.println("min :: "+min+" max :: "+(max-1));
-                if(min <= 1 && max >= (float)n+1) {
-                    System.out.println("The wall is covered");
-                    break;
-                }
-            } while(choice.equalsIgnoreCase("y"));
+            } while(min > 1 && max < (float)n+1);
+            System.out.println("The wall is covered");
         } catch(Exception e) {
             e.printStackTrace();
         }
