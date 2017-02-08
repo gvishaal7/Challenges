@@ -1,10 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package challenges;
+Given: On a wall of size 'n', paint balls are thrown. The size of the wall is an integer and the point the 
+paintballs hit on the wall are of type float i.e. they can hit anywhere on the wall to float precision.
+Also when a ball hits the wall, it occupies 1 unit.
+eg: if the paint ball hit at 1.5, the area from 1.5 to 2.5 is covered by paint.
 
+To find: If the wall is covered by paint.
+note: if the wall size is 3, it is still considered uncoverd, if the wall is covered upto 2.9999999
+
+*/
 import java.io.*;
 import java.util.*;
 
