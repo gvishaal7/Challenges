@@ -324,9 +324,6 @@ var event_occurrences = [
 
 var findSchedulingConflicts = function(clients, event_occurrences) {
 	var conflicts = [];
-	// Solution goes here!
-	// ...
-
 	var upd_evt_occ = update_dates();
 	var new_clt_det = get_upd_clt_det(upd_evt_occ);
 	conflicts = get_conflicts(new_clt_det);
