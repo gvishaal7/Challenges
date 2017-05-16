@@ -97,7 +97,7 @@ var event_occurrences = [
   {
     id: 1030,
     service_id: 122,
-    start: "Tue, 30 May 2017 11:00:00 PDT -07:00”,
+    start: "Tue, 30 May 2017 11:00:00 PDT -07:00",
     end: "Tue, 30 May 2017 12:30:00 PDT -07:00",
     client_ids: [20091, 33152, 9931003]
   },
