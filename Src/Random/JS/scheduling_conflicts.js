@@ -1,21 +1,54 @@
 /**
- * Scheduling Shenanigans at The Vogon Poetry Corner
+ * :: The Problem ::
  *
- * (c) 2017 Front Desk, https://www.frontdeskhq.org
+ * A speculated side-effect of repeated exposure to Vogon poetry is a
+ * disassociation from the regular passage of time. As such, none of these
+ * clients are particularly good at managing their calendars and frequently
+ * double or even triple book themselves into overlapping classes.
+ *
+ * Can you assist these afflicted individuals by creating a function to find
+ * all their scheduling conflicts over these upcoming classes?
+ *
  */
 
-
 /**
- * :: The Setup ::
+ * :: Constraints ::
+ * 
+ * You're welcome to create helper functions as necessary but we'd prefer you
+ * limit the use of (or refrain from using) external libraries as much as
+ * possible.
  *
- * Let's consider a sample business at Front Desk - The Vogon Poetry Corner.
- * This particular business is owned and operated by Poet Master Grunthos* 
- * and offers a number of classes in Vogon poetry**.
+ * The order of the result set is not important, but please return the results
+ * in the following format:
+ *   [
+ *     {
+ *       client_id: 123,
+ *       client_name: "John Smith",
+ *       conflicting_event_occurrence_ids: [
+ *         [...],
+ *         [...],
+ *         ...
+ *       ]
+ *     },
+ *     {
+ *       client_id: 234,
+ *       client_name: "Jane Doe",
+ *       conflicting_event_occurrence_ids: [
+ *         [...],
+ *         [...],
+ *         ...
+ *       ]
+ *     },
+ *     ...
+ *   ];
  *
- *   *  Per The Hitchhiker's Guide to the Galaxy, Grunthos was not a Vogon,
- *      but Azgoth of Kria
  *
- *   ** A form of poetry widely considered to be 3rd worst in the universe
+ * Furthermore, all elements in "conflicting_event_occurrence_ids" should be:
+ *   1. A unique set. That is, it should not contain both [1, 2] and [2, 1]
+ *   2. The largest set possible. If event occurrences 1, 2, and 3 all overlap,
+ *      the result should contain just [1, 2, 3] and not [1, 2, 3] and [1, 2],
+ *      [2, 3], [1, 3] or some combination thereof.
+ *
  */
 
 var business = {
@@ -336,60 +369,6 @@ var event_occurrences = [
   }
 ];
 
-/**
- * :: The Problem ::
- *
- * A speculated side-effect of repeated exposure to Vogon poetry is a
- * disassociation from the regular passage of time. As such, none of these
- * clients are particularly good at managing their calendars and frequently
- * double or even triple book themselves into overlapping classes.
- *
- * Can you assist these afflicted individuals by creating a function to find
- * all their scheduling conflicts over these upcoming classes?
- *
- */
-
-/**
- * :: Constraints ::
- * 
- * You're welcome to create helper functions as necessary but we'd prefer you
- * limit the use of (or refrain from using) external libraries as much as
- * possible.
- *
- * The order of the result set is not important, but please return the results
- * in the following format:
- *   [
- *     {
- *       client_id: 123,
- *       client_name: "John Smith",
- *       conflicting_event_occurrence_ids: [
- *         [...],
- *         [...],
- *         ...
- *       ]
- *     },
- *     {
- *       client_id: 234,
- *       client_name: "Jane Doe",
- *       conflicting_event_occurrence_ids: [
- *         [...],
- *         [...],
- *         ...
- *       ]
- *     },
- *     ...
- *   ];
- *
- *
- * Furthermore, all elements in "conflicting_event_occurrence_ids" should be:
- *   1. A unique set. That is, it should not contain both [1, 2] and [2, 1]
- *   2. The largest set possible. If event occurrences 1, 2, and 3 all overlap,
- *      the result should contain just [1, 2, 3] and not [1, 2, 3] and [1, 2],
- *      [2, 3], [1, 3] or some combination thereof.
- *
- */
-
-
 var findSchedulingConflicts = function(clients, event_occurrences) {
 	var conflicts = [];
 	// Solution goes here!
@@ -538,6 +517,7 @@ function get_upd_clt_det(evt_occ) {
 					/*
 						"all_events.indexOf(curr_evt_id) == -1" utilizes the transitivity propery:
 						if a is in conflict with b and b is in conflict with c then c is in conflict with a
+						and also removes duplicates ([a,b] and [b,a] is considered same)
 					*/
 				}			
 			}  
