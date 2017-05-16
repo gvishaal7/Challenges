@@ -51,52 +51,6 @@
  *
  */
 
-var business = {
-  id: 3,
-  name: "The Vogon Poetry Corner",
-  timezone: "Pacific Time (US & Canada)",
-  currency_code: "USD",
-  default_locale: "en",
-  owner_id: 21
-};
-
-var staff_members = [
-  {
-    id: 21,
-    name: "Master Grunthos"
-  },
-  {
-    id: 22,
-    name: "Prostetnic Jeltz"
-  },
-  {
-    id: 23,
-    name: "Paula Nancy Millstone Jennings"
-  }
-];
-
-// The classes offered
-var services = [
-  {
-    id: 121,
-    business_id: 3,
-    name: "Springtime in Hemorrhagic Verse",
-    maximum_clients: 4
-  },
-  {
-    id: 122,
-    business_id: 3,
-    name: "Lessons in Lugubrious Minstrelsy",
-    maximum_clients: 4
-  },
-  {
-    id: 123,
-    business_id: 3,
-    name: "Interpretive Gurgling",
-    maximum_clients: 6
-  }
-];
-
 
 /**
  * The following are the most regular clients at The Vogon Poetry Corner and
