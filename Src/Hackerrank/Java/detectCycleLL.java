@@ -41,5 +41,4 @@ boolean hasCycle(Node head) {
         e.printStackTrace();
     }
     return cycle;
- 
 }
