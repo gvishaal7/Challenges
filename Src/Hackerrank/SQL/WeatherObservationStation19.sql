@@ -1,4 +1,4 @@
-link: https://www.hackerrank.com/challenges/weather-observation-station-19/problem
+/*link: https://www.hackerrank.com/challenges/weather-observation-station-19/problem */
 
 select  round(
         sqrt(
