@@ -1,4 +1,6 @@
-/*link:https://www.hackerrank.com/challenges/binary-search-tree-1/problem*/
+/*
+  link:https://www.hackerrank.com/challenges/binary-search-tree-1/problem
+*/
 
 select 	distinct(t1.n), 
   	(CASE WHEN 
@@ -8,6 +10,6 @@ select 	distinct(t1.n),
    	then 'Leaf' 
    	ELSE 'Inner' 
    	END) 
-from BST t1 
+from 	BST t1 
 left join BST t2 
-on t1.n=t2.p;
+on 	t1.n=t2.p;
