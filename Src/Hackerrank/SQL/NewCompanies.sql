@@ -5,25 +5,25 @@ link: https://www.hackerrank.com/challenges/the-company/problem
 with lm as (
     select  company_code as cclm, 
             count(distinct(lead_manager_code)) as lm_count 
-    from lead_manager 
+    from    lead_manager 
     group by company_code
 ),
 sm as (
     select  company_code as ccsm, 
             count(distinct(senior_manager_code)) as sm_count 
-    from senior_manager 
+    from    senior_manager 
     group by company_code
 ),
 m as (
     select  company_code as ccm, 
             count(distinct(manager_code)) as m_count 
-    from manager 
+    from    manager 
     group by company_code
 ),
 e as (
     select  company_code as cce, 
             count(distinct(employee_code)) as e_count 
-    from employee 
+    from    employee 
     group by company_code
 )
 select  company_code, 
