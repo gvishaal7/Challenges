@@ -1,5 +1,8 @@
-import java.util.Random;
+/*
+the running time of the solution is order of O(n)
+*/
 
+import java.util.Random;
 
 public void shuffle(Object[] a) {
     int aLength = a.length-1;
