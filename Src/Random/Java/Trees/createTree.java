@@ -1,3 +1,16 @@
+/*
+	Elements are inserted in level-order fashion
+	eg: 
+	for n = 7
+	and elements 1 2 3 4 5 6 7
+	The final tree will look like,
+
+            1
+		2		3
+	4		56		7
+	
+*/
+
 package trees;
 
 import java.util.Scanner;
