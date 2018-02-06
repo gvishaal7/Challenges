@@ -1,14 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+    root - left - right
+*/
 package trees;
 
-/**
- *
- * @author vishaalgopalan
- */
 public class preOrder {
     
     public static void main(String[] args) throws Exception {
