@@ -20,6 +20,7 @@ public class lowestCommonAncestor {
         System.out.print("node 2 : ");
         int val2 = in.nextInt();
         findLCA(root,val1,val2);
+        in.close();
     }
     
     public void findLCA(Node root, int val1, int val2) {
