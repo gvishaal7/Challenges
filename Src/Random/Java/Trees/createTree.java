@@ -31,6 +31,7 @@ public class createTree {
             root = createTree(root,in.nextInt());
         }
         return root;
+	in.close();
     }
     
     public Node createTree(Node root,int val) {
