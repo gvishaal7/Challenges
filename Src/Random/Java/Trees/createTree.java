@@ -4,11 +4,15 @@
 	for n = 7
 	and elements 1 2 3 4 5 6 7
 	The final tree will look like,
-
-            1
-		2		3
-	4		56		7
+	root : 1
+	left(1) : 2
+	right(1) : 3
+	left(2) : 4
+	right(2) : 5
+	left(3) : 6
+	left(3) : 7
 	
+	if we add one more element, say 8, then it will be the left node of 4.
 */
 
 package trees;
