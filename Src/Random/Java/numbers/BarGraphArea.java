@@ -13,23 +13,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class BarGraphArea {
-    
-    public static void main(String[] args) throws Exception {
-        BarGraphArea bga = new BarGraphArea();
-        ArrayList<ArrayList<Integer>> coordinates = new ArrayList<>();
-        if(args.length ==1) {
-            coordinates = bga.getFromFile(args[0]);
-        }
-        else {
-            coordinates = bga.getFromConsole();
-        }
-        int area = 0;
-        if(!coordinates.isEmpty()) {
-            area = bga.findArea(coordinates);
-        }
-        System.out.println("Area : "+area);
-    }
-    
+  
     /*
       function to read from a file
     */
@@ -129,4 +113,21 @@ public class BarGraphArea {
         area = maxMap.keySet().stream().map((d) -> maxMap.get(d)).reduce(area, (accumulator, _item) -> accumulator + _item);
         return area;
     }   
+  
+    public static void main(String[] args) throws Exception {
+        BarGraphArea bga = new BarGraphArea();
+        ArrayList<ArrayList<Integer>> coordinates = new ArrayList<>();
+        if(args.length ==1) {
+            coordinates = bga.getFromFile(args[0]);
+        }
+        else {
+            coordinates = bga.getFromConsole();
+        }
+        int area = 0;
+        if(!coordinates.isEmpty()) {
+            area = bga.findArea(coordinates);
+        }
+        System.out.println("Area : "+area);
+    }
+    
 }
