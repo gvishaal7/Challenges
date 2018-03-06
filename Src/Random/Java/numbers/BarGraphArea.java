@@ -39,6 +39,7 @@ public class BarGraphArea {
                 tempList.add(height);
                 coordinates.add(tempList);
             }
+          br.close();
         } catch(IOException ioe) {
             System.err.println("Error while reading the file.\nError message : "+ioe.getMessage());
         } catch(NumberFormatException nfe) {
