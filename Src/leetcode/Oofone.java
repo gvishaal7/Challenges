@@ -140,7 +140,6 @@ class AllOne {
     /** Returns one of the keys with Minimal value. */
     public String getMinKey() {
         Object[] keys = maxMap.keySet().toArray();
-        System.out.println(maxMap);
         if(keys.length > 0) {
             int firstIndex = (int)keys[0]; //the first index/the first key has the min count
             ArrayList<String> tempList = maxMap.get(firstIndex);
