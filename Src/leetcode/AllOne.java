@@ -28,7 +28,7 @@ class AllOne {
                 consider the following example,
                     maxMap = {3=["hello","a"]};
                     inc("a");
-                    maxMap = {3=["hello"],4=["a"]}
+                    maxMap = {3=["hello"],4=["a"]};
                 from the above example,
                 'a' is removed from the key value '3' and is added to key value '4'
             */
@@ -97,6 +97,15 @@ class AllOne {
                 }
             }
             else {
+                /*
+                    consider the following example,
+                        maxMap = {3=["hello","a"],4=["b"]};
+                        dec("b");
+                        maxMap = {3=["hello","a","b"]};
+                    from the above example,
+                    'b' is removed from the key value '4' and is added to key value '3' and
+                    the empty list belonging to key value '4' is also removed.
+                */
                 myMap.put(key,count);
                 ArrayList<String> tempList = maxMap.get((count+1));
                 tempList.remove(key);
@@ -110,13 +119,16 @@ class AllOne {
                 else {
                     maxMap.put((count+1),tempList);
                 }
+                /*
+                    maps the 'key' to its new count value.
+                */
                 if(maxMap.containsKey(count)) {
                     tempList = maxMap.get(count);
                     tempList.add(key);
                     maxMap.put(count,tempList);
                 }
                 else {
-                    tempList.clear();
+                    tempList.clear(); //reusing 'tempList'
                     tempList.add(key);
                     maxMap.put(count,tempList);
                 }
@@ -151,12 +163,3 @@ class AllOne {
     }
     
 }
-
-/**
- * Your AllOne object will be instantiated and called as such:
- * AllOne obj = new AllOne();
- * obj.inc(key);
- * obj.dec(key);
- * String param_3 = obj.getMaxKey();
- * String param_4 = obj.getMinKey();
- */
