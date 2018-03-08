@@ -6,7 +6,7 @@ class AllOne {
 
     private Map<String,Integer> myMap; //a map to store each key and its count
     private Map<Integer,ArrayList<String>> maxMap; //a map to store the count and all the keys with that count
-    /** Initialize your data structure here. */
+    
     public AllOne() {
         myMap = new HashMap<>();
         /*
