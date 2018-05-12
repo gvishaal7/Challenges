@@ -1,5 +1,7 @@
-package challenges;
-
+/*
+ * question : given an array of elements, an effective cost is the min value that of sum of the max value of the sub arrays
+ * whose size is the threshold 'k'
+ */
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
