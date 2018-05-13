@@ -1,6 +1,12 @@
 /*
  * question : given an array of elements, an effective cost is the min value that of sum of the max value of the sub arrays
  * whose size is the threshold 'k'
+ * example:
+ * n = 3 k = 2
+ * array : 1 5 2
+ * cost = 6
+ * reason: possible sub-arrays {(1,5),(2)}, {(1),(5,2)} 
+ * cost = min((max(1,5)+max(2)),(max(1)+max(5,2)) = max(1)+max(5,2) = 6
  */
 import java.util.ArrayList;
 import java.util.Arrays;
