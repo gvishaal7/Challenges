@@ -31,7 +31,6 @@ class Trim_Binary_Search_Tree {
                     output = newRoot;
                 }    
                 else {
-                    TreeNode temp = newRoot;
                     traverseNewTree(rootVal,newRoot);
                 }
             }
