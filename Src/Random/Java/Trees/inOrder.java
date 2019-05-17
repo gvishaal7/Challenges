@@ -26,4 +26,28 @@ public class inOrder {
             findInOrder(root.getRightNode());
         }
     }
+  
+  /*
+   * leetcode question link: https://leetcode.com/problems/binary-tree-inorder-traversal/
+   */
+    public void getInorderIterative(Node root) {
+        if(root != null) {
+            Stack<Node> myStack = new Stack<>();
+            myStack.add(root);
+            while(!myStack.isEmpty()) {
+                Node temp = myStack.peek();
+                if(temp.getLeftNode() != null) {
+                    myStack.add(temp.getLeftNode());
+                }
+                else {
+                    System.out.println(myStack.pop().getNodeVal()+" ");
+                    if(!myStack.isEmpty())
+                        myStack.peek().getLeftNode() = null;
+                    if(temp.getRightNode() != null) {
+                        myStack.add(temp.getRightNode());
+                    }
+                }
+            }
+        }
+    }
 }
