@@ -7,7 +7,7 @@
 */
 
 
-class Solution {
+class complex_number_multiplication {
     public String complexNumberMultiply(String a, String b) {
         String[] aParts = new String[2];
         String[] bParts = new String[2];

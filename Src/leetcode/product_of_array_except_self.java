@@ -3,7 +3,7 @@ question link : https://leetcode.com/problems/product-of-array-except-self/descr
 
 */
 
-class Solution {
+class product_of_array_except_self {
     public int[] productExceptSelf(int[] nums) {
         int length = nums.length;
         int[] leftArray = new int[length];

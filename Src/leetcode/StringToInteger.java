@@ -4,7 +4,7 @@
  
  import java.math.*;
 
-class Solution {
+class StringToInteger {
     public int myAtoi(String str) {
         int output = 0;
         if(str != null && !str.isEmpty()) {

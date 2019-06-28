@@ -10,7 +10,14 @@ question link : https://leetcode.com/problems/odd-even-linked-list/description/
  *     ListNode(int x) { val = x; }
  * }
  */
-class Solution {
+class odd_even_ll {
+
+    public class ListNode {
+      int val;
+      ListNode next;
+      ListNode(int x) { val = x; }
+  }
+
     public ListNode oddEvenList(ListNode head) {
         if(head != null && head.next != null) {
             ListNode odd = head;

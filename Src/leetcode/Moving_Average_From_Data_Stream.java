@@ -1,13 +1,13 @@
 /*
  * question link: https://leetcode.com/problems/moving-average-from-data-stream/
  */
-public class Moving_Average_from_Data_Stream {
+public class Moving_Average_From_Data_Stream {
     private int size;
     private int[] numbers;
     private int index;
     private boolean isMoreThanWindow;
     /** Initialize your data structure here. */
-    public MovingAverage(int size) {
+    public Moving_Average_From_Data_Stream(int size) {
         this.size = size;
         this.numbers = new int[size];
         this.index = 0;

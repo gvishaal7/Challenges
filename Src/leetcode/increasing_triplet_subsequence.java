@@ -3,7 +3,7 @@ question link : https://leetcode.com/problems/increasing-triplet-subsequence/des
 
 */
 
-class Solution {
+class increasing_triplet_subsequence {
     public boolean increasingTriplet(int[] nums) {
         boolean output = false;
         int one = Integer.MAX_VALUE;

@@ -2,12 +2,14 @@
   question link : https://leetcode.com/problems/find-median-from-data-stream/description/
 */
 
-class MedianFinder {
+import java.util.ArrayList;
+
+class RunningMedian {
 
     /** initialize your data structure here. */
     private ArrayList<Integer> dataPoints;
     private int size;
-    public MedianFinder() {
+    public RunningMedian() {
         dataPoints = new ArrayList<>();
         size = 0;
     }

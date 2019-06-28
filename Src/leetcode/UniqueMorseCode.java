@@ -3,7 +3,10 @@
  *
  */
 
-class UniqueMoreseCode {
+import java.util.HashMap;
+import java.util.Map;
+
+class UniqueMorseCode {
     public int uniqueMorseRepresentations(String[] words) {
         String[] morseCodes =  {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
         Map<String,Integer> transCount = new HashMap<>();

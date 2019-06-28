@@ -9,7 +9,7 @@ application of binary search
    @return -1 if my number is lower, 1 if my number is higher, otherwise return 0
       int guess(int num); */
 
-public class Solution extends GuessGame {
+public class guessNumber extends GuessGame {
     public int guessNumber(int n) {
         int l = 0;
         int r = n;

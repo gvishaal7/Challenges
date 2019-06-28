@@ -11,7 +11,15 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
+class MaximumBinaryTree {
+
+    public class TreeNode {
+      int val;
+      TreeNode left;
+      TreeNode right;
+      TreeNode(int x) { val = x; }
+  }
+
     public TreeNode constructMaximumBinaryTree(int[] nums) {
         if(nums != null && nums.length > 0) {
             return (construct(nums,0,nums.length-1));
