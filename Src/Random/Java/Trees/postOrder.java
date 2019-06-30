@@ -25,4 +25,29 @@ public class postOrder {
             System.out.print(root.getNodeVal()+" ");
         }
     }
+
+    public List<Integer> postorderTraversal(TreeNode root) {
+        if(root == null) {
+            return (new ArrayList<>());
+        }
+        List<Integer> outputList = new ArrayList<>();
+        Stack<TreeNode> tempStack = new Stack<>();
+        tempStack.add(root);
+        while(!tempStack.isEmpty()) {
+            TreeNode top = tempStack.peek();
+            if(top.left != null) {
+                tempStack.add(top.left);
+                top.left = null;
+            }
+            else if(top.right != null) {
+                tempStack.add(top.right);
+                top.right = null;
+            }
+            else {
+                outputList.add(top.val);
+                tempStack.pop();
+            }
+        }
+        return outputList;
+    }
 }
