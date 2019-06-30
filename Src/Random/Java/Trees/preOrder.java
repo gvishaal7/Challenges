@@ -25,5 +25,35 @@ public class preOrder {
             findPreOrder(root.getRightNode());
         }
     }
-    
+
+    /*
+     * iterative approach
+     */
+    public List<Integer> preorderTraversal(TreeNode root) {
+        if(root == null) {
+            return (new ArrayList<>());
+        }
+
+        List<Integer> outputList = new ArrayList<>();
+        Stack<TreeNode> tempStack = new Stack<>();
+        outputList.add(root.val);
+        tempStack.add(root);
+        while(!tempStack.isEmpty()) {
+            TreeNode top = tempStack.peek();
+            if(top.left != null) {
+                outputList.add(top.left.val);
+                tempStack.add(top.left);
+                top.left = null;
+            }
+            else if(top.right != null) {
+                outputList.add(top.right.val);
+                tempStack.add(top.right);
+                top.right = null;
+            }
+            else {
+                tempStack.pop();
+            }
+        }
+        return outputList;
+    }
 }
