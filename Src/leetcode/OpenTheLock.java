@@ -14,7 +14,7 @@ public class OpenTheLock {
         Queue<Map> myQue = new LinkedList<>();
         Map<String,Integer> tempMap = new HashMap<>();
         tempMap.put(start,0);
-        if(!deadList.contains(start) && !alreadySeen.contains(start)) {
+        if(!deadList.contains(start)) {
             myQue.add(tempMap);
             alreadySeen.add(start);
         }
@@ -64,8 +64,7 @@ public class OpenTheLock {
                 val = 9;
             }
         }
-        String newString = current.substring(0,position)+String.valueOf(val)+current.substring(position+1);
-        return newString;
+        return (current.substring(0,position)+String.valueOf(val)+current.substring(position+1));
     }
 
 }
