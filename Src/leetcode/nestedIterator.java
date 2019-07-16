@@ -23,11 +23,11 @@ import java.util.ArrayList;
  *     public List<NestedInteger> getList();
  * }
  */
-public class NestedIterator implements Iterator<Integer> {
+public class nestedIterator implements Iterator<Integer> {
 
     List<Integer> myList;
     Iterator<Integer> myIter;
-    public NestedIterator(List<NestedInteger> nestedList) {
+    public nestedIterator(List<NestedInteger> nestedList) {
         this.myList = new ArrayList<>();
         flatten(nestedList);
         this.myIter = myList.iterator();
