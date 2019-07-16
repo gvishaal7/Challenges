@@ -8,7 +8,7 @@
  *
  * @author vishaalgopalan
  */
-public class testclass {
+public class multiples {
         public static void main(String[] args) {         
             int sum = 0;
             int first = 1;
