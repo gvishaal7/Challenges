@@ -1,2 +1,8 @@
 *.iml
 *.idea
+*.DS_Store
+*.classpath
+*.project
+*.settings/*
+bin/*
+Src/Random/Java/Random1.iml
