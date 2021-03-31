@@ -40,6 +40,7 @@ public class inOrder {
                     myStack.add(temp.getLeftNode());
                 }
                 else {
+                    System.out.println(myStack.pop().getNodeVal());
                     if(!myStack.isEmpty())
                         myStack.peek().getLeftNode() = null;
                     if(temp.getRightNode() != null) {

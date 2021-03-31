@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
 /*
     question link : https://leetcode.com/problems/all-oone-data-structure/description/
 */
@@ -17,7 +22,7 @@ class AllOne {
     }
     
     /** Inserts a new key <Key> with value 1. Or increments an existing key by 1. */
-    public void inc(String key) {
+    public void inc(String key) {    	
         if(myMap.containsKey(key)) {
             int count = myMap.get(key); //the count of the 'key' is increased and updated
             count++;
