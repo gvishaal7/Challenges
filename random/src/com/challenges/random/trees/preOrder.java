@@ -8,12 +8,12 @@ import java.util.List;
 import java.util.Stack;
 
 public class preOrder {
-    
+
     public static void main(String[] args) throws Exception {
         preOrder po = new preOrder();
         po.process();
     }
-    
+
     public void process() {
         createTree ct = new createTree();
         Node root = ct.setUpTree();
@@ -21,10 +21,10 @@ public class preOrder {
         findPreOrder(root);
         System.out.println();
     }
-    
+
     public void findPreOrder(Node root) {
-        if(root != null) {
-            System.out.print(root.getNodeVal()+" ");
+        if (root != null) {
+            System.out.print(root.getNodeVal() + " ");
             findPreOrder(root.getLeftNode());
             findPreOrder(root.getRightNode());
         }
@@ -34,7 +34,7 @@ public class preOrder {
      * iterative approach
      */
     public List<Integer> preorderTraversal(Node root) {
-        if(root == null) {
+        if (root == null) {
             return (new ArrayList<>());
         }
 
@@ -42,14 +42,14 @@ public class preOrder {
         Stack<Node> tempStack = new Stack<>();
         outputList.add(root.val);
         tempStack.add(root);
-        while(!tempStack.isEmpty()) {
+        while (!tempStack.isEmpty()) {
             Node top = tempStack.peek();
-            if(top.left != null) {
+            if (top.left != null) {
                 outputList.add(top.left.val);
                 tempStack.add(top.left);
                 top.left = null;
             }
-            else if(top.right != null) {
+            else if (top.right != null) {
                 outputList.add(top.right.val);
                 tempStack.add(top.right);
                 top.right = null;

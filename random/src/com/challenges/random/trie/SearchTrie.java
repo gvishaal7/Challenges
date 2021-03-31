@@ -4,9 +4,9 @@ public class SearchTrie {
 
     public boolean search(TrieNode node, String word) {
         char[] wArray = word.toCharArray();
-        for(char w : wArray) {
+        for (char w : wArray) {
             TrieNode temp = node.children.get(w);
-            if(temp == null) {
+            if (temp == null) {
                 return false;
             }
             node = temp;

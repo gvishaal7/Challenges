@@ -6,12 +6,14 @@ package com.challenges.leetcode;
 
 import java.util.Stack;
 
-
 class MinStack {
 
-    /** initialize your data structure here. */
+    /**
+     * initialize your data structure here.
+     */
     Stack<Integer> myStack;
     Stack<Integer> minStack;
+
     public MinStack() {
         myStack = new Stack<>();
         minStack = new Stack<>();
@@ -19,12 +21,12 @@ class MinStack {
 
     public void push(int x) {
         myStack.add(x);
-        if(minStack.isEmpty()) {
+        if (minStack.isEmpty()) {
             minStack.add(x);
         }
         else {
             int minVal = minStack.peek();
-            if(minVal >= x) {
+            if (minVal >= x) {
                 minStack.add(x);
             }
         }
@@ -32,7 +34,7 @@ class MinStack {
 
     public void pop() {
         int val = myStack.pop();
-        if(val == minStack.peek()) {
+        if (val == minStack.peek()) {
             minStack.pop();
         }
 

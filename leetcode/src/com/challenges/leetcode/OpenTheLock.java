@@ -14,36 +14,35 @@ public class OpenTheLock {
         Set<String> alreadySeen = new HashSet<>();
         Set<String> deadList = new HashSet<>(Arrays.asList(deadends));
         Queue<Map> myQue = new LinkedList<>();
-        Map<String,Integer> tempMap = new HashMap<>();
-        tempMap.put(start,0);
-        if(!deadList.contains(start)) {
+        Map<String, Integer> tempMap = new HashMap<>();
+        tempMap.put(start, 0);
+        if (!deadList.contains(start)) {
             myQue.add(tempMap);
             alreadySeen.add(start);
         }
-        while(!myQue.isEmpty()) {
-            Map<String,Integer> first = myQue.poll();
+        while (!myQue.isEmpty()) {
+            Map<String, Integer> first = myQue.poll();
             String currStr = first.keySet().iterator().next();
             int currVal = first.get(currStr);
-            if(currStr.equals(target)) {
+            if (currStr.equals(target)) {
                 times = currVal;
                 break;
             }
             currVal++;
-            for(int pos=0;pos<4;pos++)
-            {
-                String positiveTurn = rotate(currStr,pos,true);
-                String negativeTurn = rotate(currStr,pos,false);
+            for (int pos = 0; pos < 4; pos++) {
+                String positiveTurn = rotate(currStr, pos, true);
+                String negativeTurn = rotate(currStr, pos, false);
 
                 tempMap = new HashMap<>();
-                tempMap.put(positiveTurn,currVal);
-                if(!deadList.contains(positiveTurn) && !alreadySeen.contains(positiveTurn)) {
+                tempMap.put(positiveTurn, currVal);
+                if (!deadList.contains(positiveTurn) && !alreadySeen.contains(positiveTurn)) {
                     myQue.add(tempMap);
                     alreadySeen.add(positiveTurn);
                 }
 
                 tempMap = new HashMap<>();
                 tempMap.put(negativeTurn, currVal);
-                if(!deadList.contains(negativeTurn) && !alreadySeen.contains(negativeTurn)) {
+                if (!deadList.contains(negativeTurn) && !alreadySeen.contains(negativeTurn)) {
                     myQue.add(tempMap);
                     alreadySeen.add(negativeTurn);
                 }
@@ -52,21 +51,21 @@ public class OpenTheLock {
         return times;
     }
 
-    private String rotate(String current, int position,boolean add) {
-        int val = Integer.parseInt(current.substring(position,position+1));
-        if(add) {
+    private String rotate(String current, int position, boolean add) {
+        int val = Integer.parseInt(current.substring(position, position + 1));
+        if (add) {
             val++;
-            if(val > 9) {
+            if (val > 9) {
                 val = 0;
             }
         }
         else {
             val--;
-            if(val < 0) {
+            if (val < 0) {
                 val = 9;
             }
         }
-        return (current.substring(0,position)+String.valueOf(val)+current.substring(position+1));
+        return (current.substring(0, position) + String.valueOf(val) + current.substring(position + 1));
     }
 
 }

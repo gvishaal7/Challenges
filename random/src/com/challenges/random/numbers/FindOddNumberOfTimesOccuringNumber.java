@@ -5,68 +5,60 @@
  */
 package com.challenges.random.numbers;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
- *
  * @author vishaalgopalan
  */
 public class FindOddNumberOfTimesOccuringNumber {
-    
+
     private static int[] myArray;
-    public static void main(String[] args)
-    {
+
+    public static void main(String[] args) {
         Scanner scanner = null;
-        try
-        {
+        try {
             scanner = new Scanner(System.in);
             System.out.println("Enter the array");
             ArrayList<Integer> arrayList = new ArrayList<Integer>();
             int element = 0;
-            do
-            {
+            do {
                 element = scanner.nextInt();
-                if(element != 0)
-                {
+                if (element != 0) {
                     arrayList.add(element);
                 }
-            }while(element != 0);
-            
+            } while (element != 0);
+
             int number = computeOddNumber(arrayList);
-            if(number != 0)
-                System.out.println("OUTPUT :: "+number);
+            if (number != 0)
+                System.out.println("OUTPUT :: " + number);
         }
-        catch(NumberFormatException ne)
-        {
+        catch (NumberFormatException ne) {
             System.out.println("ENTER AN INTEGER");
         }
-        catch(Exception e)
-        {
+        catch (Exception e) {
             e.printStackTrace();
         }
-        finally
-        {
-            try
-            {
-                if(scanner!=null) { scanner.close(); }
+        finally {
+            try {
+                if (scanner != null) {
+                    scanner.close();
+                }
             }
-            catch(Exception e)
-            {
+            catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
-    
-    public static int computeOddNumber(ArrayList<Integer> arrayList)
-    {
+
+    public static int computeOddNumber(ArrayList<Integer> arrayList) {
         int number = 0;
-        try
-        {
-            for(int index=0;index<arrayList.size();index++) {
+        try {
+            for (int index = 0; index < arrayList.size(); index++) {
                 number = number ^ arrayList.get(index);
             }
         }
-        catch(Exception e)
-        {
+        catch (Exception e) {
             e.printStackTrace();
         }
         return number;

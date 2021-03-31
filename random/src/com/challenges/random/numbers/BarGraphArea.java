@@ -15,7 +15,23 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class BarGraphArea {
-  
+
+    public static void main(String[] args) throws Exception {
+        BarGraphArea bga = new BarGraphArea();
+        ArrayList<ArrayList<Integer>> coordinates = new ArrayList<>();
+        if (args.length == 1) {
+            coordinates = bga.getFromFile(args[0]);
+        }
+        else {
+            coordinates = bga.getFromConsole();
+        }
+        int area = 0;
+        if (!coordinates.isEmpty()) {
+            area = bga.findArea(coordinates);
+        }
+        System.out.println("Area : " + area);
+    }
+
     /*
       function to read from a file
     */
@@ -25,9 +41,9 @@ public class BarGraphArea {
         try {
             br = new BufferedReader(new FileReader(new File(fileName)));
             String input = "";
-            while((input = br.readLine())!=null) {
+            while ((input = br.readLine()) != null) {
                 String[] inputValues = input.split(" ");
-                if(inputValues.length != 3) {
+                if (inputValues.length != 3) {
                     System.err.println("The input file is not in the required format!");
                     System.out.println("File format : start end height");
                     break;
@@ -41,24 +57,28 @@ public class BarGraphArea {
                 tempList.add(height);
                 coordinates.add(tempList);
             }
-          br.close();
-        } catch(IOException ioe) {
-            System.err.println("Error while reading the file.\nError message : "+ioe.getMessage());
-        } catch(NumberFormatException nfe) {
-            System.err.println("Error parsing the given file. Check the file contents.\nError message : "+nfe.getMessage());
-        } 
+            br.close();
+        }
+        catch (IOException ioe) {
+            System.err.println("Error while reading the file.\nError message : " + ioe.getMessage());
+        }
+        catch (NumberFormatException nfe) {
+            System.err.println(
+                    "Error parsing the given file. Check the file contents.\nError message : " + nfe.getMessage());
+        }
         finally {
             try {
-                if(br != null) {
+                if (br != null) {
                     br.close();
                 }
-            } catch(IOException ioe) {
-                System.err.println("Error while closing BufferedReader.\nError message : "+ioe.getMessage());
+            }
+            catch (IOException ioe) {
+                System.err.println("Error while closing BufferedReader.\nError message : " + ioe.getMessage());
             }
         }
         return coordinates;
     }
-    
+
     /*
       function to read from console
     */
@@ -76,11 +96,11 @@ public class BarGraphArea {
             tempList.add(end);
             tempList.add(height);
             coordinates.add(tempList);
-        } while(in.hasNextInt());
+        } while (in.hasNextInt());
         in.close();
         return coordinates;
     }
-    
+
     /*
       function to find the area.
       methodology,
@@ -92,45 +112,30 @@ public class BarGraphArea {
     */
     public int findArea(ArrayList<ArrayList<Integer>> coordinates) {
         int area = 0;
-        HashMap<Integer,Integer> maxMap = new HashMap<>();
-        for(int i=0;i<coordinates.size();i++) {
+        HashMap<Integer, Integer> maxMap = new HashMap<>();
+        for (int i = 0; i < coordinates.size(); i++) {
             ArrayList<Integer> tempList = coordinates.get(i);
             int start = tempList.get(0);
             int end = tempList.get(1);
             int height = tempList.get(2);
-            if(end < start) {
-                System.err.println("The end point is less than start point at"+start+" "+end+" "+height);
+            if (end < start) {
+                System.err.println("The end point is less than start point at" + start + " " + end + " " + height);
                 return 0;
             }
-            for(int j=start;j<end;j++) {
-                if(maxMap.containsKey(j)) {
-                    if(height > maxMap.get(j)) {
+            for (int j = start; j < end; j++) {
+                if (maxMap.containsKey(j)) {
+                    if (height > maxMap.get(j)) {
                         maxMap.put(j, height);
                     }
                 }
                 else {
-                    maxMap.put(j,height);
+                    maxMap.put(j, height);
                 }
             }
         }
-        area = maxMap.keySet().stream().map((d) -> maxMap.get(d)).reduce(area, (accumulator, _item) -> accumulator + _item);
+        area = maxMap.keySet().stream().map((d) -> maxMap.get(d)).reduce(area, (accumulator, _item) -> accumulator
+                + _item);
         return area;
-    }   
-  
-    public static void main(String[] args) throws Exception {
-        BarGraphArea bga = new BarGraphArea();
-        ArrayList<ArrayList<Integer>> coordinates = new ArrayList<>();
-        if(args.length ==1) {
-            coordinates = bga.getFromFile(args[0]);
-        }
-        else {
-            coordinates = bga.getFromConsole();
-        }
-        int area = 0;
-        if(!coordinates.isEmpty()) {
-            area = bga.findArea(coordinates);
-        }
-        System.out.println("Area : "+area);
     }
-    
+
 }

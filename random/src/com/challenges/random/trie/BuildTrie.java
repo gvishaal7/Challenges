@@ -12,11 +12,11 @@ public class BuildTrie {
         char[] wArr = word.toCharArray();
         TrieNode current = root;
 
-        for(char w : wArr) {
+        for (char w : wArr) {
             TrieNode temp = current.children.get(w);
-            if(temp == null) {
+            if (temp == null) {
                 temp = new TrieNode();
-                current.children.put(w,temp);
+                current.children.put(w, temp);
             }
             current = temp;
         }

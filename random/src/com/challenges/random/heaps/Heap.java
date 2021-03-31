@@ -13,8 +13,8 @@ public abstract class Heap {
     }
 
     private void checkSize() {
-        if(size == heap.length) {
-            heap = Arrays.copyOf(heap,(size * 2));
+        if (size == heap.length) {
+            heap = Arrays.copyOf(heap, (size * 2));
         }
     }
 
@@ -56,7 +56,7 @@ public abstract class Heap {
     }
 
     public int leftChild(int index) {
-        if(hasLeftChild(index)) {
+        if (hasLeftChild(index)) {
             return ((2 * index) + 1);
         }
         return -1;

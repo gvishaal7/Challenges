@@ -9,21 +9,17 @@ import java.util.Random;
 /**
  * Definition for singly-linked list.
  * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
+ * int val;
+ * ListNode next;
+ * ListNode(int x) { val = x; }
  * }
  */
 class RandomLLNode {
 
-    public class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
-  }
-
-    /** @param head The linked list's head.
-    Note that the head is guaranteed to be not null, so it contains at least one node. */
+    /**
+     * @param head The linked list's head.
+     * Note that the head is guaranteed to be not null, so it contains at least one node.
+     */
 
     ListNode head;
     int size;
@@ -34,23 +30,33 @@ class RandomLLNode {
         this.head = head;
     }
 
-    /** Returns a random node's value. */
+    /**
+     * Returns a random node's value.
+     */
     public int getRandom() {
         Random rand = new Random();
         int index = rand.nextInt(this.size);
         ListNode temp = this.head;
-        while(index > 0) {
+        while (index > 0) {
             temp = temp.next;
             index--;
         }
         return temp.val;
     }
 
-
     private void findSize() {
-        while(this.head != null) {
+        while (this.head != null) {
             this.head = this.head.next;
             this.size++;
+        }
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
         }
     }
 }

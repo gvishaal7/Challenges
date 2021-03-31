@@ -27,39 +27,39 @@ public class createTree {
         System.out.print("nodes : ");
         int n = in.nextInt();
         System.out.println("Enter values");
-        for(int i=0;i<n;i++) {
-            root = createTree(root,in.nextInt());
+        for (int i = 0; i < n; i++) {
+            root = createTree(root, in.nextInt());
         }
         in.close();
         return root;
     }
-    
-    public Node createTree(Node root,int val) {
-        if(root == null) {
+
+    public Node createTree(Node root, int val) {
+        if (root == null) {
             root = new Node(val);
         }
         else {
-            Node temp = root; 
-            while(temp != null) {
+            Node temp = root;
+            while (temp != null) {
                 Node tempNode = new Node(val);
-                if(temp.getLeftNode() == null) {
+                if (temp.getLeftNode() == null) {
                     temp.setLeftNode(tempNode);
                     return root;
                 }
-                else if(temp.getRightNode() == null) {
+                else if (temp.getRightNode() == null) {
                     temp.setRightNode(tempNode);
                     return root;
                 }
-                else if(temp.getLeftNode().getLeftNode() == null || temp.getLeftNode().getRightNode()==null) {
+                else if (temp.getLeftNode().getLeftNode() == null || temp.getLeftNode().getRightNode() == null) {
                     temp = temp.getLeftNode();
                 }
-                else if(temp.getRightNode().getLeftNode() == null || temp.getRightNode().getRightNode() == null) {
+                else if (temp.getRightNode().getLeftNode() == null || temp.getRightNode().getRightNode() == null) {
                     temp = temp.getRightNode();
                 }
                 else {
                     temp = temp.getLeftNode();
                 }
-                
+
             }
         }
         return root;

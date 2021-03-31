@@ -11,16 +11,17 @@ application of binary search
 
 package com.challenges.leetcode;
 
-public class guessNumber extends GuessGame {
+public class guessNumber
+        extends GuessGame {
     public int guessNumber(int n) {
         int l = 0;
         int r = n;
-        while(l<=r) {
-            int mid = l + (r - l)/2;
-            if(guess(mid)==0) {
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if (guess(mid) == 0) {
                 return mid;
             }
-            if(guess(mid) == 1) {
+            if (guess(mid) == 1) {
                 l = mid + 1;
             }
             else {
